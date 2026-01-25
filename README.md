@@ -270,7 +270,7 @@ Tämä projekti käyttää **Nykysuomen sanalistaa**, joka on Kotimaisten kielte
 - **Julkaisija**: Kotimaisten kielten keskus (Kotus)
 - **Lisenssi**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fi) (Creative Commons Nimeä 4.0)
 
-Sanalista sisältää yli 102 000 suomen kielen sanaa ja se on vapaasti käytettävissä edellyttäen, että lähde mainitaan.
+Sanalista sisältää yli 100 000 suomen kielen sanaa ja se on vapaasti käytettävissä edellyttäen, että lähde mainitaan.
 
 ## 🙏 Kiitokset
 
