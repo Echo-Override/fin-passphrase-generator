@@ -1,5 +1,6 @@
 # 🔐 Salalausegeneraattori
 
+Luotu Tekoälyn perusteet kurssin lopputyönä VSCoden Copilot-laajennuksen avulla.
 Turvallinen ja helppokäyttöinen suomenkielinen salalausegeneraattori. Luo vahvoja, helposti muistettavia salasanoja suomalaisilla sanoilla kryptografisesti turvallisesti.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
