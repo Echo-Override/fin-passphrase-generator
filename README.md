@@ -1,5 +1,6 @@
 # 🔐 Salalausegeneraattori
 
+Luotu Tekoälyn perusteet kurssin lopputyönä VSCoden Copilot-laajennuksen avulla.
 Turvallinen ja helppokäyttöinen suomenkielinen salalausegeneraattori. Luo vahvoja, helposti muistettavia salasanoja suomalaisilla sanoilla kryptografisesti turvallisesti.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -261,7 +262,7 @@ Kontribuutiot ovat tervetulleita!
 - Päivitä dokumentaatio
 - Käytä semanttisia commit-viestejä
 
-## � Sanalistan lähde
+## 📖 Sanalistan lähde
 
 Tämä projekti käyttää **Nykysuomen sanalistaa**, joka on Kotimaisten kielten keskuksen (Kotus) julkaisema sanaluettelo.
 
@@ -269,21 +270,18 @@ Tämä projekti käyttää **Nykysuomen sanalistaa**, joka on Kotimaisten kielte
 - **Julkaisija**: Kotimaisten kielten keskus (Kotus)
 - **Lisenssi**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fi) (Creative Commons Nimeä 4.0)
 
-Sanalista sisältää yli 102 000 suomen kielen sanaa ja se on vapaasti käytettävissä edellyttäen, että lähde mainitaan.
+Sanalista sisältää yli 100 000 suomen kielen sanaa ja se on vapaasti käytettävissä edellyttäen, että lähde mainitaan.
 
 ## 🙏 Kiitokset
 
-- [EFF Diceware](https://www.eff.org/dice) - Inspiraatio satunnaisten sanalauseiden generointiin
 - [Kotus](https://kotus.fi/) - Nykysuomen sanalista (CC BY 4.0)
 - [React](https://reactjs.org/) - UI framework
 - [Vite](https://vitejs.dev/) - Build tool
 - [Tailwind CSS](https://tailwindcss.com/) - CSS framework
 - [Vercel](https://vercel.com/) - Hosting
 
-## 📞 Yhteystiedot
-
-- **Projektin kotisivu**: [https://passphrase-generator.vercel.app](https://passphrase-generator.vercel.app)
-- **Email**: p77112@edu.sasky.fi
+## 🌐 Projektin Vercel-julkaisu
+- **Vercel**: [https://passphrase-generator.vercel.app](https://passphrase-generator.vercel.app)
 
 ## 📊 Status
 
