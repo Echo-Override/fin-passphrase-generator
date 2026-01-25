@@ -280,10 +280,8 @@ Sanalista sisältää yli 100 000 suomen kielen sanaa ja se on vapaasti käytett
 - [Tailwind CSS](https://tailwindcss.com/) - CSS framework
 - [Vercel](https://vercel.com/) - Hosting
 
-## 📞 Yhteystiedot
-
-- **Projektin kotisivu**: [https://passphrase-generator.vercel.app](https://passphrase-generator.vercel.app)
-- **Email**: p77112@edu.sasky.fi
+## 🌐 Projektin Vercel-julkaisu
+- **Vercel**: [https://passphrase-generator.vercel.app](https://passphrase-generator.vercel.app)
 
 ## 📊 Status
 
