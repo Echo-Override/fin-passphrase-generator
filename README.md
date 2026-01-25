@@ -262,7 +262,7 @@ Kontribuutiot ovat tervetulleita!
 - Päivitä dokumentaatio
 - Käytä semanttisia commit-viestejä
 
-## � Sanalistan lähde
+## 📖 Sanalistan lähde
 
 Tämä projekti käyttää **Nykysuomen sanalistaa**, joka on Kotimaisten kielten keskuksen (Kotus) julkaisema sanaluettelo.
 
