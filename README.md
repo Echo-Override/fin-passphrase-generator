@@ -274,7 +274,6 @@ Sanalista sisältää yli 102 000 suomen kielen sanaa ja se on vapaasti käytett
 
 ## 🙏 Kiitokset
 
-- [EFF Diceware](https://www.eff.org/dice) - Inspiraatio satunnaisten sanalauseiden generointiin
 - [Kotus](https://kotus.fi/) - Nykysuomen sanalista (CC BY 4.0)
 - [React](https://reactjs.org/) - UI framework
 - [Vite](https://vitejs.dev/) - Build tool
