@@ -106,7 +106,7 @@ fin-passphrase-generator/
 │   ├── App.tsx              # Pääkomponentti
 │   ├── main.tsx             # Entry point
 │   └── vite-env.d.ts        # TypeScript definitions
-├── words.json               # Sanaluettelo (102,993 sanaa)
+├── words.json               # Sanaluettelo (yli 100,000 sanaa)
 ├── index.html               # HTML template
 ├── package.json             # Dependencies
 ├── tsconfig.json            # TypeScript config
