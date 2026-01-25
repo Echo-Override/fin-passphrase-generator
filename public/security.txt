@@ -1,0 +1,26 @@
+Contact: https://github.com/Echo-Override/fin-passphrase-generator/security/advisories/new
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: fi, en
+Canonical: https://fin-passphrase.vercel.app/.well-known/security.txt
+
+# Security Policy
+
+If you discover a security vulnerability in this project, please report it responsibly.
+
+## Reporting a Vulnerability
+
+Please report security vulnerabilities by:
+1. Opening a security advisory on GitHub: https://github.com/Echo-Override/fin-passphrase-generator/security/advisories/new
+2. OR emailing the maintainer through GitHub contact
+
+Please include:
+- A description of the vulnerability
+- Steps to reproduce the issue
+- Potential impact
+- Suggested fix (if available)
+
+## Response Time
+
+We aim to respond to security reports within 48 hours and will keep you informed throughout the process.
+
+Thank you for helping keep this project secure!

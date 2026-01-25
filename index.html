@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO -->
+    <title>Suomenkielinen Salalausegeneraattori</title>
+    <meta name="description" content="Luo turvallisia ja helposti muistettavia salasanoja suomalaisilla sanoilla. Kryptografisesti vahva, täysin ilmainen ja avoimen lähdekoodin." />
+    <meta name="keywords" content="salasanageneraattori, salalause, suomalainen, turvallinen, password generator, salasana, tietoturva" />
+    <meta name="author" content="Finnish Passphrase Generator" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fin-passphrase.vercel.app/" />
+    <meta property="og:title" content="Suomalainen salalausegeneraattori" />
+    <meta property="og:description" content="Luo turvallisia ja helposti muistettavia salasanoja suomalaisilla sanoilla." />
+    <meta property="og:locale" content="fi_FI" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://fin-passphrase.vercel.app/" />
+    <meta property="twitter:title" content="Suomalainen salalausegeneraattori" />
+    <meta property="twitter:description" content="Luo turvallisia ja helposti muistettavia salasanoja suomalaisilla sanoilla." />
+    
+    <!-- Security -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0ea5e9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#075985" media="(prefers-color-scheme: dark)" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    
+    <!-- Preconnect -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  </head>
+  <body>
+    <noscript>
+      <div style="padding: 20px; text-align: center; background: #fee; border: 2px solid #c33;">
+        <h1>JavaScript vaaditaan</h1>
+        <p>
+          Tämä sovellus vaatii JavaScriptin toimiakseen. Ole hyvä ja ota
+          JavaScript käyttöön selaimessasi.
+        </p>
+      </div>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

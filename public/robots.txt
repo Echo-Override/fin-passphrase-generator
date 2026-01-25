@@ -1,0 +1,10 @@
+# Robots.txt for Finnish Passphrase Generator
+
+User-agent: *
+Allow: /
+
+# Disallow sensitive paths (if any)
+Disallow: /api/
+
+# Sitemap (add when available)
+# Sitemap: https://fin-passphrase.vercel.app/sitemap.xml
