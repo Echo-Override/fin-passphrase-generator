@@ -42,7 +42,7 @@ export const PasswordDisplay: React.FC<PasswordDisplayProps> = ({
   }
 
   return (
-    <div className="bg-slate-200 dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-slate-500 dark:border-gray-700">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-zinc-200 dark:border-gray-700">
       <h2 className="text-base font-semibold text-gray-900 dark:text-white mb-4">
         {UI_TEXT.PASSWORD_TITLE}
       </h2>
@@ -50,7 +50,7 @@ export const PasswordDisplay: React.FC<PasswordDisplayProps> = ({
       {/* Salasana */}
       <div className="mb-4">
         <div className="relative">
-          <div className="bg-slate-100 dark:bg-gray-900 border-2 border-slate-600 dark:border-gray-600 rounded-lg p-4 pr-20 min-h-[60px] flex items-center">
+          <div className="bg-zinc-50 dark:bg-gray-900 border-2 border-zinc-400 dark:border-gray-600 rounded-lg p-4 pr-20 min-h-[60px] flex items-center">
             {isLoading ? (
               <div className="text-gray-400 dark:text-gray-500 text-sm">
                 Ladataan...
@@ -124,7 +124,7 @@ export const PasswordDisplay: React.FC<PasswordDisplayProps> = ({
           </div>
 
           {/* Vahvuuspalkki */}
-          <div className="w-full bg-slate-400 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+          <div className="w-full bg-zinc-300 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
             <div
               className={`h-full ${strengthLevel.bgColor} transition-all duration-300`}
               style={{ width: `${Math.min(strengthPercentage, 100)}%` }}

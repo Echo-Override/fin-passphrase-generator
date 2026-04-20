@@ -22,7 +22,7 @@ export const Settings: React.FC<SettingsProps> = ({
   onUpdateOptions,
 }) => {
   return (
-    <div className="bg-slate-200 dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-slate-500 dark:border-gray-700">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-zinc-200 dark:border-gray-700">
       <h2 className="text-base font-semibold text-gray-900 dark:text-white mb-4">
         {UI_TEXT.SETTINGS_TITLE}
       </h2>
@@ -47,7 +47,7 @@ export const Settings: React.FC<SettingsProps> = ({
               onChange={(e) =>
                 onUpdateOptions({ wordCount: parseInt(e.target.value) })
               }
-              className="w-full h-2 bg-slate-400 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary-600"
+              className="w-full h-2 bg-zinc-300 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary-600"
             />
           </div>
 
@@ -68,7 +68,7 @@ export const Settings: React.FC<SettingsProps> = ({
               onChange={(e) =>
                 onUpdateOptions({ minLength: parseInt(e.target.value) })
               }
-              className="w-full h-2 bg-slate-400 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary-600"
+              className="w-full h-2 bg-zinc-300 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary-600"
             />
           </div>
         </div>
@@ -88,7 +88,7 @@ export const Settings: React.FC<SettingsProps> = ({
             onChange={(e) => onUpdateOptions({ separator: e.target.value })}
             placeholder="-"
             maxLength={3}
-            className="w-full px-2 py-1.5 text-sm bg-slate-50 dark:bg-gray-700 border border-slate-500 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            className="w-full px-2 py-1.5 text-sm bg-zinc-50 dark:bg-gray-700 border border-zinc-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           />
         </div>
 
@@ -125,7 +125,7 @@ export const Settings: React.FC<SettingsProps> = ({
 
         {/* Suolan asetukset */}
         {options.useSalt && (
-          <div className="space-y-3 pt-2 border-t border-slate-400 dark:border-gray-700">
+          <div className="space-y-3 pt-2 border-t border-zinc-200 dark:border-gray-700">
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label
@@ -142,7 +142,7 @@ export const Settings: React.FC<SettingsProps> = ({
                       saltType: e.target.value as PasswordOptions['saltType'],
                     })
                   }
-                  className="w-full px-2 py-1.5 text-sm bg-slate-50 dark:bg-gray-700 border border-slate-500 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-2 py-1.5 text-sm bg-zinc-50 dark:bg-gray-700 border border-zinc-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 >
                   <option value="number">{SALT_TYPE_LABELS.number}</option>
                   <option value="custom">{SALT_TYPE_LABELS.custom}</option>
@@ -165,7 +165,7 @@ export const Settings: React.FC<SettingsProps> = ({
                         .value as PasswordOptions['saltPosition'],
                     })
                   }
-                  className="w-full px-2 py-1.5 text-sm bg-slate-50 dark:bg-gray-700 border border-slate-500 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-2 py-1.5 text-sm bg-zinc-50 dark:bg-gray-700 border border-zinc-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 >
                   <option value="start">{SALT_POSITION_LABELS.start}</option>
                   <option value="end">{SALT_POSITION_LABELS.end}</option>
@@ -191,7 +191,7 @@ export const Settings: React.FC<SettingsProps> = ({
                   onChange={(e) =>
                     onUpdateOptions({ saltLength: parseInt(e.target.value) })
                   }
-                  className="w-full h-2 bg-slate-400 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary-600"
+                  className="w-full h-2 bg-zinc-300 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary-600"
                 />
               </div>
             )}
@@ -206,7 +206,7 @@ export const Settings: React.FC<SettingsProps> = ({
                     onUpdateOptions({ customSalt: e.target.value })
                   }
                   maxLength={20}
-                  className="w-full px-2 py-1.5 text-sm bg-slate-50 dark:bg-gray-700 border border-slate-500 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-2 py-1.5 text-sm bg-zinc-50 dark:bg-gray-700 border border-zinc-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
               </div>
             )}

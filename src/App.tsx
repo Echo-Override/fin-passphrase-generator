@@ -10,10 +10,10 @@ function App() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-300 dark:bg-gray-900">
+    <div className="min-h-screen flex flex-col bg-zinc-100 dark:bg-gray-900">
       <button
         onClick={toggleDarkMode}
-        className="fixed top-4 right-4 z-50 p-2 rounded-lg bg-slate-200 dark:bg-gray-800 hover:bg-slate-300 dark:hover:bg-gray-700 transition-colors shadow-lg border border-slate-400 dark:border-gray-700"
+        className="fixed top-4 right-4 z-50 p-2 rounded-lg bg-white dark:bg-gray-800 hover:bg-zinc-50 dark:hover:bg-gray-700 transition-colors shadow-lg border border-zinc-200 dark:border-gray-700"
         aria-label={isDarkMode ? UI_TEXT.LIGHT_MODE : UI_TEXT.DARK_MODE}
       >
         {isDarkMode ? (
