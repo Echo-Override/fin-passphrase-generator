@@ -16,7 +16,6 @@ import {
 import {
   API_CONFIG,
   PASSWORD_CONFIG,
-  SALT_CONFIG,
   CHARSET,
 } from '../utils/constants';
 import { useLocalStorage } from './useLocalStorage';
@@ -71,7 +70,7 @@ function calculateEntropyForOptions(
     const saltLength =
       options.saltType === 'custom' && options.customSalt
         ? options.customSalt.length
-        : SALT_CONFIG.LENGTH;
+        : options.saltLength;
 
     const saltEntropy = Math.floor(saltLength * Math.log2(saltCharsetSize));
     entropy += saltEntropy;
@@ -239,13 +238,15 @@ export function usePasswordGenerator(): UsePasswordGeneratorResult {
               ? opts.customSalt
               : generateSecureRandomString(CHARSET.NUMBERS, opts.saltLength);
 
+          const sep = opts.separator;
+
           // Apply salt position
           switch (opts.saltPosition) {
             case 'start':
-              pwd = salt + pwd;
+              pwd = sep ? salt + sep + pwd : salt + pwd;
               break;
             case 'end':
-              pwd = pwd + salt;
+              pwd = sep ? pwd + sep + salt : pwd + salt;
               break;
             case 'random': {
               // Choose random position: start, end, or separator location
@@ -255,9 +256,9 @@ export function usePasswordGenerator(): UsePasswordGeneratorResult {
               ];
 
               // Add separator positions if they exist
-              if (opts.separator && opts.separator.length > 0 && processedWords.length >= 2) {
+              if (sep && sep.length > 0 && processedWords.length >= 2) {
                 const sepRegex = new RegExp(
-                  opts.separator.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'),
+                  sep.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'),
                   'g'
                 );
                 let match;
@@ -272,17 +273,18 @@ export function usePasswordGenerator(): UsePasswordGeneratorResult {
 
               switch (selectedPos.type) {
                 case 'start':
-                  pwd = salt + pwd;
+                  pwd = sep ? salt + sep + pwd : salt + pwd;
                   break;
                 case 'end':
-                  pwd = pwd + salt;
+                  pwd = sep ? pwd + sep + salt : pwd + salt;
                   break;
                 case 'separator':
-                  // Replace separator with salt
                   pwd =
                     pwd.substring(0, selectedPos.index!) +
+                    sep +
                     salt +
-                    pwd.substring(selectedPos.index! + opts.separator.length);
+                    sep +
+                    pwd.substring(selectedPos.index! + sep.length);
                   break;
               }
               break;

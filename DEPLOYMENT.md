@@ -58,12 +58,8 @@ git push -u origin main
 In Vercel Dashboard > Project > Settings > Environment Variables, add:
 
 ```
-# Optional: If you have custom API URL
+# Optional: If you have a custom domain
 VITE_API_BASE_URL=https://your-domain.vercel.app
-
-# API Rate Limiting (optional, has defaults)
-API_RATE_LIMIT_MAX=100
-API_RATE_LIMIT_WINDOW=900000
 ```
 
 #### Step 4: Deploy

@@ -70,12 +70,27 @@ export const PasswordGenerator: React.FC = () => {
         </div>
       </div>
 
-      {/* Suositus */}
-      <div className="mt-6">
-        <p className="text-center text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-          Suositus: Vähintään 3 sanaa lyhytaikaisiin salasanoihin ja 5 sanaa tärkeisiin pitkäaikaisiin salasanoihin.
-        </p>
-      </div>
+      <p className="mt-6 text-center text-xs text-gray-500 dark:text-gray-400">
+        Sanaluettelo:{' '}
+        <a
+          href="https://kaino.kotus.fi/sanat/nykysuomi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-500 dark:text-gray-400 underline hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+        >
+          Nykysuomen sanalista
+        </a>
+        {' '}(Kotimaisten kielten keskus,{' '}
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-500 dark:text-gray-400 underline hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
+        >
+          CC BY 4.0
+        </a>
+        )
+      </p>
     </div>
   );
 };

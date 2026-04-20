@@ -15,6 +15,7 @@ import path from 'path';
 const requestCounts = new Map();
 const RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minuuttia
 const MAX_REQUESTS = 100; // Maksimi pyynnöt per ikkuna
+const MAX_TRACKED_IPS = 10000; // Rajoita muistinkäyttöä
 
 /**
  * Tarkista rate limiting
@@ -30,6 +31,13 @@ function checkRateLimit(ip) {
   }
 
   userRequests.count++;
+
+  // Rajoita kartan kokoa uusien IP:iden lisäämiseksi — poista vanhin merkintä
+  if (!requestCounts.has(ip) && requestCounts.size >= MAX_TRACKED_IPS) {
+    const oldestKey = requestCounts.keys().next().value;
+    requestCounts.delete(oldestKey);
+  }
+
   requestCounts.set(ip, userRequests);
 
   return userRequests.count <= MAX_REQUESTS;
@@ -39,8 +47,9 @@ function checkRateLimit(ip) {
  * Pääkäsittelijä
  */
 export default async function handler(req, res) {
-  // Hae IP-osoite
-  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
+  // Hae IP-osoite - käytä vain ensimmäistä IP:tä välityspalvelinketjusta
+  const rawIp = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown';
+  const ip = (typeof rawIp === 'string' ? rawIp.split(',')[0] : String(rawIp)).trim();
 
   // Tarkista rate limiting
   if (!checkRateLimit(ip)) {

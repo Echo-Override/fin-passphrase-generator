@@ -1,296 +1,271 @@
-# 🔐 Salalausegeneraattori
+# 🔐 Finnish Passphrase Generator
 
-Luotu Tekoälyn perusteet kurssin lopputyönä VSCoden Copilot-laajennuksen avulla.
-Turvallinen ja helppokäyttöinen suomenkielinen salalausegeneraattori. Luo vahvoja, helposti muistettavia salasanoja suomalaisilla sanoilla kryptografisesti turvallisesti.
+A secure, easy-to-use passphrase generator that creates strong, memorable passwords using Finnish words and cryptographically secure randomness.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-5-purple)](https://vitejs.dev/)
 
-## ✨ Ominaisuudet
+## ✨ Features
 
-- 🔒 **Kryptografisesti turvallinen** - Käyttää Web Crypto API:ta
-- 🇫🇮 **Suomalaiset sanat** - Yli 100,000 suomalaista sanaa
-- 🎨 **Moderni UI** - Responsiivinen, tumma teema, Tailwind CSS
-- ⚡ **Nopea ja kevyt** - Vite + React
-- 🔐 **Täysi yksityisyys** - Salasanat luodaan paikallisesti, ei lähetetä palvelimelle
-- ♿ **Saavutettavuus** - WCAG 2.1 Level AA yhteensopiva
-- 📱 **Responsiivinen** - Toimii kaikilla laitteilla
-- 🌙 **Tumma tila** - Automaattinen teeman vaihto
-- 📊 **Entropia-indikaattori** - Näyttää salasanan vahvuuden
-- ⚙️ **Muokattava** - Monta vaihtoehtoa salasanan luomiseen
+- 🔒 **Cryptographically secure** — Uses the Web Crypto API
+- 🇫🇮 **Finnish word list** — Over 100,000 Finnish words
+- 🎨 **Modern UI** — Responsive, dark/light theme, Tailwind CSS
+- ⚡ **Fast and lightweight** — Vite + React
+- 🔐 **Full privacy** — Passwords are generated locally and never sent to a server
+- ♿ **Accessible** — WCAG 2.1 Level AA compliant
+- 📱 **Responsive** — Works on all devices
+- 🌙 **Dark mode** — Automatic theme switching
+- 📊 **Entropy indicator** — Displays password strength in bits
+- ⚙️ **Configurable** — Word count, separator, capitalisation, numeric salt
 
-## 🚀 Pika-aloitus
+## 🚀 Quick Start
 
-### Edellytykset
+### Prerequisites
 
-- Node.js 18+ ja npm 9+
+- Node.js 18+ and npm 9+
 - Git
 
-### Asennus
+### Installation
 
-1. **Kloonaa repositorio**
+1. **Clone the repository**
 ```bash
 git clone https://github.com/Echo-Override/fin-passphrase-generator.git
 cd fin-passphrase-generator
 ```
 
-2. **Asenna riippuvuudet**
+2. **Install dependencies**
 ```bash
 npm install
 ```
 
-3. **Käynnistä kehityspalvelin**
+3. **Start the development server**
 ```bash
 npm run dev
 ```
 
-4. **Avaa selaimessa**
+4. **Open in browser**
 ```
 http://localhost:3000
 ```
 
-## 📦 Skriptit
+## 📦 Scripts
 
 ```bash
-# Kehitys
-npm run dev              # Käynnistä dev-palvelin
+# Development
+npm run dev              # Start dev server
 
-# Tuotanto
-npm run build            # Rakenna tuotantoon
-npm run preview          # Esikatsele build
+# Production
+npm run build            # Build for production
+npm run preview          # Preview the build
 
-# Testaus
-npm test                 # Aja testit
-npm run test:watch       # Aja testit watch-tilassa
-npm run test:coverage    # Testikattavuus
+# Testing
+npm test                 # Run tests
+npm run test:watch       # Run tests in watch mode
+npm run test:coverage    # Generate coverage report
 
-# Koodin laatu
-npm run lint             # Tarkista koodin laatu
-npm run lint:fix         # Korjaa lint-virheet
-npm run format           # Formatoi koodi
-npm run format:check     # Tarkista formatointi
-npm run type-check       # Tarkista tyypit
+# Code quality
+npm run lint             # Check code quality
+npm run lint:fix         # Fix lint errors
+npm run format           # Format code
+npm run format:check     # Check formatting
+npm run type-check       # Type check without emitting
 ```
 
-## 🏗️ Projektin rakenne
+## 🏗️ Project Structure
 
 ```
 fin-passphrase-generator/
 ├── api/                      # Vercel serverless functions
-│   └── words.js             # API endpoint sanaluettelolle
-├── public/                   # Staattiset tiedostot
-│   ├── security.txt         # Tietoturva-raportit
-│   ├── robots.txt           # SEO
-│   └── favicon.svg          # Favicon
+│   └── words.js              # Word list API endpoint
+├── public/                   # Static files
+│   ├── security.txt          # Security contact info
+│   ├── robots.txt            # SEO
+│   └── favicon.svg           # Favicon
 ├── src/
-│   ├── components/          # React-komponentit
+│   ├── components/           # React components
 │   │   ├── Header.tsx
 │   │   ├── PasswordDisplay.tsx
 │   │   ├── PasswordGenerator.tsx
 │   │   └── Settings.tsx
-│   ├── hooks/               # Custom React hooks
+│   ├── hooks/                # Custom React hooks
 │   │   ├── useCopyToClipboard.ts
 │   │   ├── useDarkMode.ts
 │   │   ├── useLocalStorage.ts
 │   │   └── usePasswordGenerator.ts
-│   ├── styles/              # CSS-tyylit
+│   ├── styles/               # Global CSS
 │   │   └── globals.css
-│   ├── tests/               # Testit
+│   ├── tests/                # Tests
 │   │   ├── setup.ts
 │   │   └── utils/
-│   ├── utils/               # Apufunktiot
-│   │   ├── constants.ts     # Vakiot
-│   │   ├── passphrase.ts      # Salasanageneraattori
-│   │   └── security.ts      # Turvallisuustyökalut
-│   ├── App.tsx              # Pääkomponentti
-│   ├── main.tsx             # Entry point
-│   └── vite-env.d.ts        # TypeScript definitions
-├── words.json               # Sanaluettelo (yli 100,000 sanaa)
-├── index.html               # HTML template
-├── package.json             # Dependencies
-├── tsconfig.json            # TypeScript config
-├── vite.config.ts           # Vite config
-├── vercel.json              # Vercel deployment config
-├── tailwind.config.js       # Tailwind CSS config
-└── README.md                # Tämä tiedosto
+│   ├── utils/                # Utility modules
+│   │   ├── constants.ts      # App-wide constants
+│   │   ├── passphrase.ts     # Passphrase generation logic
+│   │   └── security.ts       # Cryptographic helpers
+│   ├── App.tsx               # Root component
+│   ├── main.tsx              # Entry point
+│   └── vite-env.d.ts         # TypeScript env declarations
+├── words.json                # Word list (100,000+ words)
+├── index.html                # HTML template
+├── package.json              # Dependencies
+├── tsconfig.json             # TypeScript config
+├── vite.config.ts            # Vite config
+├── vercel.json               # Vercel deployment config
+├── tailwind.config.js        # Tailwind CSS config
+└── README.md
 ```
 
-## 🔐 Turvallisuus
+## 🔐 Security
 
-### Turvallisuusominaisuudet
+- ✅ **Web Crypto API** — Cryptographically secure randomness, rejection-sampling for uniform distribution
+- ✅ **Client-side generation** — Passwords never leave the browser
+- ✅ **Content Security Policy** — `script-src 'self'` (no `unsafe-inline`)
+- ✅ **Security headers** — HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy
+- ✅ **Rate limiting** — 100 requests per 15-minute window per IP on the API
+- ✅ **Input validation** — All inputs validated and range-constrained
+- ✅ **No logging** — Passwords are never logged anywhere
+- ✅ **HTTPS enforced** — Strict-Transport-Security header applied
 
-- ✅ **Web Crypto API** - Kryptografisesti turvallinen satunnaisuus
-- ✅ **Client-side generation** - Salasanat eivät koskaan poistu selaimesta
-- ✅ **Content Security Policy** - Estää XSS-hyökkäykset
-- ✅ **Security headers** - X-Frame-Options, X-Content-Type-Options, jne.
-- ✅ **Rate limiting** - API-kutsujen rajoitus
-- ✅ **Input validation** - Kaikki syötteet validoidaan
-- ✅ **No logging** - Salasanoja ei kirjata mihinkään
-- ✅ **HTTPS only** - Pakotettu HTTPS Vercelissä
+## 🌐 Deploying to Vercel
 
-## 🌐 Vercel-käyttöönotto
+### Automatic deployment
 
-### Automaattinen käyttöönotto
-
-1. **Pushaa GitHubiin**
+1. **Push to GitHub**
 ```bash
 git add .
 git commit -m "Initial commit"
 git push origin main
 ```
 
-2. **Yhdistä Verceliin**
-   - Mene [vercel.com](https://vercel.com)
-   - Klikkaa "New Project"
+2. **Connect to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Click **New Project**
    - Import your GitHub repository
-   - Vercel tunnistaa asetukset automaattisesti
-   - Klikkaa "Deploy"
+   - Vercel detects the configuration automatically
+   - Click **Deploy**
 
-### Manuaalinen käyttöönotto
+### Manual deployment
 
 ```bash
-# Asenna Vercel CLI
+# Install Vercel CLI
 npm i -g vercel
 
-# Kirjaudu
+# Log in
 vercel login
 
-# Deploy
+# Preview deployment
 vercel
 
-# Production deploy
+# Production deployment
 vercel --prod
 ```
 
-### Ympäristömuuttujat
+### Environment variables
 
-Luo `.env.local` tiedosto:
+Create a `.env.local` file for local development:
 
 ```env
 VITE_API_BASE_URL=http://localhost:3000
-API_RATE_LIMIT_MAX=100
-API_RATE_LIMIT_WINDOW=900000
+PRODUCTION_URL=https://your-domain.vercel.app
 ```
 
-Vercelissä aseta nämä Project Settings > Environment Variables -kohdassa.
+Set these in Vercel under **Project Settings → Environment Variables**.
 
-## 🧪 Testaus
+## 🧪 Testing
 
-Projekti käyttää Vitestiä ja Testing Library -kirjastoa.
+Tests use [Vitest](https://vitest.dev/) and [Testing Library](https://testing-library.com/).
 
 ```bash
-# Aja kaikki testit
+# Run all tests
 npm test
 
 # Watch mode
 npm run test:watch
 
-# Testikattavuus
+# Coverage report
 npm run test:coverage
 ```
 
-### Testikattavuustavoite
+Coverage targets: 80%+ lines, functions, branches, and statements.
 
-- ✅ Lines: 80%+
-- ✅ Functions: 80%+
-- ✅ Branches: 80%+
-- ✅ Statements: 80%+
+## 🎨 Customisation
 
-## 🎨 Muokkaaminen
+### Colour theme
 
-### Väriteemat
-
-Muokkaa `tailwind.config.js`:
+Edit `tailwind.config.js`:
 
 ```javascript
 theme: {
   extend: {
     colors: {
       primary: {
-        // Omat värisi
+        // your colours
       },
     },
   },
 },
 ```
 
-### Tekstit
+### UI text
 
-Kaikki tekstit ovat `src/utils/constants.ts`:ssä:
+All UI strings are in `src/utils/constants.ts`:
 
 ```typescript
 export const UI_TEXT = {
-  APP_TITLE: 'Salalausegeneraattori',
-  // ... muut tekstit
+  APP_TITLE: 'Suomenkielinen Salalausegeneraattori',
+  // ...
 };
 ```
 
-### Sanaluettelo
+### Word list
 
-Korvaa `words.json` omalla sanaluettelollasi:
+Replace `words.json` with your own list:
 
 ```json
 {
-  "words": [
-    "sana1",
-    "sana2",
-    ...
-  ]
+  "words": ["word1", "word2", "..."]
 }
 ```
 
-## 📝 Lisenssi
+The list must contain at least 1,000 unique non-empty strings.
 
-MIT License - katso [LICENSE](LICENSE) tiedosto
+## 📖 Word List Attribution
 
-## 🤝 Kontribuutiot
+This project uses the **Nykysuomen sanalista** (Modern Finnish Word List) published by [Kotimaisten kielten keskus](https://kaino.kotus.fi/sanat/nykysuomi/) (Institute for the Languages of Finland).
 
-Kontribuutiot ovat tervetulleita!
+- **Source**: [Nykysuomen sanalista](https://kaino.kotus.fi/sanat/nykysuomi/)
+- **Publisher**: Kotimaisten kielten keskus
+- **Licence**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
-1. Fork projekti
-2. Luo feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit muutokset (`git commit -m 'Add some AmazingFeature'`)
-4. Push branchiin (`git push origin feature/AmazingFeature`)
-5. Avaa Pull Request
+## 📝 Licence
 
-### Kehitysohjeet
+MIT — see the [LICENSE](LICENSE) file.
 
-- Noudata ESLint sääntöjä
-- Kirjoita testit uusille ominaisuuksille
-- Päivitä dokumentaatio
-- Käytä semanttisia commit-viestejä
+## 🤝 Contributing
 
-## 📖 Sanalistan lähde
+Contributions are welcome!
 
-Tämä projekti käyttää **Nykysuomen sanalistaa**, joka on Kotimaisten kielten keskuksen (Kotus) julkaisema sanaluettelo.
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/my-feature`)
+3. Commit your changes (`git commit -m 'Add my feature'`)
+4. Push to the branch (`git push origin feature/my-feature`)
+5. Open a Pull Request
 
-- **Lähde**: [Nykysuomen sanalista](https://kotus.fi/sanakirjat/kielitoimiston-sanakirja/nykysuomen-sana-aineistot/nykysuomen-sanalista/)
-- **Julkaisija**: Kotimaisten kielten keskus (Kotus)
-- **Lisenssi**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fi) (Creative Commons Nimeä 4.0)
+Please follow the existing ESLint rules, write tests for new functionality, and use semantic commit messages.
 
-Sanalista sisältää yli 100 000 suomen kielen sanaa ja se on vapaasti käytettävissä edellyttäen, että lähde mainitaan.
+## 🙏 Acknowledgements
 
-## 🙏 Kiitokset
+- [Kotimaisten kielten keskus](https://kaino.kotus.fi/) — Nykysuomen sanalista (CC BY 4.0)
+- [React](https://reactjs.org/) — UI framework
+- [Vite](https://vitejs.dev/) — Build tool
+- [Tailwind CSS](https://tailwindcss.com/) — CSS framework
+- [Vercel](https://vercel.com/) — Hosting
 
-- [Kotus](https://kotus.fi/) - Nykysuomen sanalista (CC BY 4.0)
-- [React](https://reactjs.org/) - UI framework
-- [Vite](https://vitejs.dev/) - Build tool
-- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
-- [Vercel](https://vercel.com/) - Hosting
+## 🌐 Live
 
-## 🌐 Projektin Vercel-julkaisu
-- **Vercel**: [https://passphrase-generator.vercel.app](https://passphrase-generator.vercel.app)
-
-## 📊 Status
-
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![Coverage](https://img.shields.io/badge/coverage-85%25-green)
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+- **Vercel**: [https://fin-passphrase.vercel.app](https://fin-passphrase.vercel.app)
 
 ---
 
-**Huomaa:** Tämä on avoimen lähdekoodin projekti. Käytä omalla vastuullasi ja tarkista aina salasanakäytäntösi organisaatiosi ohjeiden mukaan.
-
-🔐 **Luo turvallisia salasanoja - aina ja kaikkialla!**
+**Note:** This is an open-source project. Use at your own discretion and always verify your password practices against your organisation's security policy.

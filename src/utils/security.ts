@@ -154,18 +154,15 @@ export function validateWordList(words: string[]): void {
 }
 
 /**
- * Puhdistaa arkaluontoisen datan muistista
- * Huom: Tämä on "best effort" - JavaScript ei tarjoa takuita muistin puhdistamisesta
+ * Huom: JavaScript-merkkijonoja ei voi luotettavasti tyhjentää muistista,
+ * koska ne ovat muuttumattomia primitiivejä. Tämä funktio on tarkoitettu
+ * muistuttamaan tästä rajoituksesta eikä tarjoa todellista muistin tyhjennystä.
  *
- * @param data - Puhdistettava merkkijono
+ * @deprecated Käytä tätä ainoastaan dokumentaatiotarkoituksissa.
  */
-export function clearSensitiveData(data: string): void {
-  // Yritä nollata muisti
-  if (data) {
-    // TypeScript/JavaScript ei voi oikeasti muokata immutable stringejä,
-    // mutta asetamme viitteen null:ksi
-    data = '';
-  }
+export function clearSensitiveData(_data: string): void {
+  // JavaScript strings are immutable primitives — no reliable in-memory clearing is possible.
+  // Do not rely on this function for security guarantees.
 }
 
 /**

@@ -9,7 +9,7 @@ import {
   calculateEntropy,
   validateWordList,
 } from './security';
-import { CHARSET, SALT_CONFIG, PASSWORD_CONFIG, SECURITY } from './constants';
+import { CHARSET, PASSWORD_CONFIG, SECURITY } from './constants';
 
 export type SaltType = 'number' | 'custom';
 export type SaltPosition = 'start' | 'end' | 'random';
@@ -133,7 +133,7 @@ export function generatePassphrase(
     const saltLength =
       options.saltType === 'custom' && options.customSalt
         ? options.customSalt.length
-        : SALT_CONFIG.LENGTH;
+        : options.saltLength;
     const saltEntropy = Math.floor(saltLength * Math.log2(saltCharsetSize));
     entropy += saltEntropy;
   }
@@ -194,9 +194,9 @@ function addSaltToPassword(
 ): string {
   switch (position) {
     case 'start':
-      return salt + password;
+      return separator ? salt + separator + password : salt + password;
     case 'end':
-      return password + salt;
+      return separator ? password + separator + salt : password + salt;
     case 'random': {
       // Valitse satunnainen paikka: alku, loppu tai erottimen paikka
       const positions: Array<{ type: 'start' | 'end' | 'separator'; index?: number }> = [
@@ -222,18 +222,20 @@ function addSaltToPassword(
 
       switch (selectedPos.type) {
         case 'start':
-          return salt + password;
+          return separator ? salt + separator + password : salt + password;
         case 'end':
-          return password + salt;
+          return separator ? password + separator + salt : password + salt;
         case 'separator':
-          // Korvaa erotin suolalla
+          // Lisää suola erottimen tilalle, säilyttäen erottimet kummallakin puolella
           return (
             password.substring(0, selectedPos.index!) +
+            separator +
             salt +
+            separator +
             password.substring(selectedPos.index! + separator.length)
           );
         default:
-          return password + salt;
+          return separator ? password + separator + salt : password + salt;
       }
     }
     default:

@@ -37,7 +37,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - QUICKSTART.md
   - DEPLOYMENT.md
   - CONTRIBUTING.md
-  - SECURITY.md
   - PROJECT_SUMMARY.md
 - 🚀 Vercel deployment configuration
 - 🎯 TypeScript strict mode

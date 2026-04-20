@@ -112,7 +112,7 @@ export const UI_TEXT = {
   DARK_MODE: 'Tumma tila',
   LIGHT_MODE: 'Vaalea tila',
   SETTINGS_TITLE: 'Asetukset',
-  PASSWORD_TITLE: 'Salasanasi',
+  PASSWORD_TITLE: 'Salasana',
   ERROR_LOADING_WORDS: 'Virhe sanojen lataamisessa',
   ERROR_GENERATING: 'Virhe salasanan luomisessa',
 } as const;

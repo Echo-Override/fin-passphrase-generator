@@ -1,6 +1,6 @@
 # ⚡ Quick Start Guide
 
-Get your Salalausegeneraattori (Finnish Passphrase Generator) up and running in 5 minutes!
+Get your Finnish Passphrase Generator up and running in 5 minutes!
 
 ## 1️⃣ Install Dependencies
 
@@ -24,7 +24,7 @@ npm run dev
 
 **Expected output**:
 ```
-VITE v5.x.x  ready in xxx ms
+VITE v8.x.x  ready in xxx ms
 
 ➜  Local:   http://localhost:3000/
 ➜  Network: use --host to expose
